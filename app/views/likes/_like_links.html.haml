@@ -1,0 +1,11 @@
+%div.like-link{id: "like-link-#{prototype.id}"}
+  - if current_user.likes.find_by(prototype_id: prototype.id)
+    = link_to unlike_path(prototype.id), method: :delete, remote: true do
+      .btn.btn-default.glyphicon.glyphicon-heart{id: "heart-#{prototype.id}"}
+        = prototype.likes.count.to_s
+  - else
+    = link_to like_path(prototype.id), method: :post, remote: true do
+      .btn.btn-default.glyphicon.glyphicon-heart-empty{id: "heart-#{prototype.id}"}
+        = prototype.likes.count.to_s
+
+

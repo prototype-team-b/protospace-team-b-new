@@ -1,0 +1,39 @@
+.jumbotron
+  .container.text-center
+    = image_tag("header_logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "73px")
+
+.filter-nav
+  .container
+    .row
+      %ul.nav.nav-pills.col-lg-11
+        %li.btn-default.btn-popular
+          = link_to "Popular", "#"
+        %li.btn-default.btn-popular
+          = link_to "Newest", "#"
+      = link_to "VIEW TAGS", tags_path, class: "btn btn-default col-lg-1"
+
+.container
+  .row
+    .col-sm-12.proto-content
+      .thumbnail
+        .btn-tag
+          = @tag.text
+
+.container.proto-list
+  .row
+    .col-sm-4.col-md-3.proto-content
+      .thumnail
+        - @prototypes.each do |prototype|
+          = link_to prototype_path(prototype) do
+            = image_tag(prototype.captured_images.main.first.content)
+          .caption
+            %h3
+              = prototype.title
+            .proto-meta
+              .proto-user
+                = link_to prototype.user.name, user_path(prototype.user)
+                .proto-tag
+                  = link_to @tag.text
+              .proto-posted
+                = prototype.posted_date
+

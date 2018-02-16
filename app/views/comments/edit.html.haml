@@ -1,0 +1,4 @@
+%h4 Edit Comment
+= form_for @comment, url: prototype_comment_path(@comment.prototype_id, @comment.id) do |f|
+  = f.text_field :content, require: true
+  = f.submit 'Edit Comment'
