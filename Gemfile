@@ -18,8 +18,7 @@ gem 'devise'
 gem 'rmagick'
 gem 'kaminari'
 gem 'bootstrap-sass'
-gem 'carrierwave'
-gem 'fog'
+
 
 
 group :development, :test do
@@ -35,6 +34,9 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+gem 'carrierwave'
+gem 'fog'
 
 group :production do
   gem 'rails_12factor'
