@@ -11,6 +11,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  config.fog_directory  = 'chat-space-inakazu'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space-inakazu'
+  config.fog_directory  = 'chatspace-new'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chatspace-new'
 end
